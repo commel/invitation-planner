@@ -11,23 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Name des Gasts" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :invited %><br>
-    <%= f.check_box :invited %>
+    <%= f.check_box :invited, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :accepted %><br>
-    <%= f.check_box :accepted %>
+    <%= f.check_box :accepted, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :payed %><br>
-    <%= f.check_box :payed %>
+    <%= f.check_box :payed, class: "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.button "Speichern", class: "btn btn-lg btn-primary btn-block" %>
   </div>
 <% end %>

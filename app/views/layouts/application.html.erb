@@ -12,7 +12,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= yield %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <p id="notice"><%= notice %></p>  
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <%= yield %>          
+      </div>
+    </div>  
+  </div>
 
   <%= javascript_include_tag "//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js" %>
   <%= javascript_include_tag "//cdn.jsdelivr.net/bootstrap/3.1.1/js/bootstrap.min.js" %>  

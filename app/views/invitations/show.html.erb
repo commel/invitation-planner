@@ -1,24 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <h1><%= @invitation.name %><small>Datensatz anzeigen</small></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @invitation.name %>
-</p>
+<div class="checkbox">
+  <label>
+    <input type="checkbox" value="<%= @invitation.invited %>" disabled>
+    Eingeladen
+  </label>  
+</div>
 
-<p>
-  <strong>Invited:</strong>
-  <%= @invitation.invited %>
-</p>
+<div class="checkbox">
+  <label>
+    <input type="checkbox" value="<%= @invitation.accepted %>" disabled>
+    Angemeldet
+  </label>  
+</div>
 
-<p>
-  <strong>Accepted:</strong>
-  <%= @invitation.accepted %>
-</p>
+<div class="checkbox">
+  <label>
+    <input type="checkbox" value="<%= @invitation.payed %>" disabled>
+    Bezahlt
+  </label>  
+</div>
 
-<p>
-  <strong>Payed:</strong>
-  <%= @invitation.payed %>
-</p>
 
-<%= link_to 'Edit', edit_event_invitation_path(@event, @invitation) %> |
-<%= link_to 'Back', @event %>
+<%= link_to 'Bearbeiten', edit_event_invitation_path(@event, @invitation), class: "btn btn-primary btn-lg btn-block" %>
+<%= link_to 'Zurück zu den Gästen', event_invitations_path(@event), class: "btn btn-default btn-lg btn-block" %>

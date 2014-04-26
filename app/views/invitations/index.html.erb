@@ -1,8 +1,14 @@
-<h1>Listing invitations</h1>
+<div class="page-header">
+  <h1>Einladungen für <%= @event.name %><small>Klicken um zu Bearbeiten</small></h1>
+</div>
+
+<%= link_to new_event_invitation_path(@event), class: "btn btn-success btn-block btn-lg" do %>
+  <span class="glyphicon glyphicon-plus"></span>
+<% end %>
 
 <div class="list-group">
   <% @invitations.each do |invitation| %>
-    <%= link_to [@event, invitation], class: "list-group-item" do %>
+  <%= link_to edit_event_invitation_path(@event, invitation), class: "list-group-item" do %>
       <h4 class="list-group-item-heading"><%= invitation.name %></h4>
       <p>
         <ul class="list-inline">
@@ -15,6 +21,4 @@
   <% end %>
 </div>
 
-<br>
-
-<%= link_to 'New Invitation', new_event_invitation_path(@event) %>
+<%= link_to 'Events', events_path, class: "btn btn-default btn-block btn-lg" %>

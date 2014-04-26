@@ -1,6 +1,5 @@
-<h1>Editing invitation</h1>
+<h1>Einladung bearbeiten</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @invitation %> |
-<%= link_to 'Back', @event %>
+<%= link_to 'zurück', event_invitations_path([@event]), class: "btn btn-default btn-block btn-lg" %>
