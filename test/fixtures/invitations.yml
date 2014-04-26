@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  invited: false
+  accepted: false
+  payed: false
+
+two:
+  name: MyString
+  invited: false
+  accepted: false
+  payed: false

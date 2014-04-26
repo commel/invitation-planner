@@ -1,0 +1,20 @@
+<h1>Listing invitations</h1>
+
+<div class="list-group">
+  <% @invitations.each do |invitation| %>
+    <%= link_to [@event, invitation], class: "list-group-item" do %>
+      <h4 class="list-group-item-heading"><%= invitation.name %></h4>
+      <p>
+        <ul class="list-inline">
+          <li><%= invitation.invited %></li>
+          <li><%= invitation.accepted %></li>
+          <li><%= invitation.payed %></li>
+        </ul>
+      </p>
+    <% end %>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to 'New Invitation', new_event_invitation_path(@event) %>
