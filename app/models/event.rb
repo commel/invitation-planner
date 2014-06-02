@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
   
-  has_many :invitations
+  has_many :invitations, -> { order(name: :asc) }
   
 end
