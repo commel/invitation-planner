@@ -1,24 +1,9 @@
-<div class="page-header">
-  <h1>Einladungen für <%= @event.name %><small>Klicken um zu Bearbeiten</small></h1>
-</div>
+<h1>Einladungen für <%= @event.name %></h1>
 
-<%= link_to new_event_invitation_path(@event), class: "btn btn-success btn-block btn-lg" do %>
-  <span class="glyphicon glyphicon-plus"></span>
-<% end %>
-
-<div class="list-group">
+<ul data-role="listview" data-filter="true" data-autodividers="true" data-filter-placeholder="Gastenamen suchen..." data-inset="true">
   <% @invitations.each do |invitation| %>
-  <%= link_to edit_event_invitation_path(@event, invitation), class: "list-group-item" do %>
-      <h4 class="list-group-item-heading"><%= invitation.name %></h4>
-      <p>
-        <ul class="list-inline">
-          <li><%= invitation.invited %></li>
-          <li><%= invitation.accepted %></li>
-          <li><%= invitation.payed %></li>
-        </ul>
-      </p>
-    <% end %>
+    <li>
+      <%= link_to invitation.name, edit_event_invitation_path(@event, invitation) %>
+    </li>
   <% end %>
-</div>
-
-<%= link_to 'Events', events_path, class: "btn btn-default btn-block btn-lg" %>
+</ul>

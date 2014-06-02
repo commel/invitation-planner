@@ -1,0 +1,8 @@
+<ul>
+  <li><%= link_to 'Neuer Gast', new_event_invitation_path(@event), { "data-icon" => "plus" } %></li>
+  <% if @invitation %>
+    <li><%= link_to @event.name, event_invitations_path(@event), { "data-icon" => "back" } %></li>
+  <% else %>
+    <li><%= link_to 'Events', events_path, { "data-icon" => "back" } %></li>
+  <% end %>
+</ul>

@@ -1,27 +1,12 @@
-<h1>Listing events</h1>
+<h1>Event<h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Eventdate</th>
-      <th>Gästeliste</th>
-      <th>Neuer Gast</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= link_to event.name, event %></td>
-        <td><%= event.eventdate %></td>
-        <td><%= link_to "Gäste", event_invitations_path([event]) %></td>
-        <td><%= link_to "Neuer Gast", new_event_invitation_path(event) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Event', new_event_path %>
+<ul data-role="listview" data-inset="true">
+  <% @events.each do |event| %>
+    <li>
+      <%= link_to event_invitations_path(event) do %>
+        <%= event.name %>
+        <span class="ui-li-count"><%= event.invitations.count %></span>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <title>InvitationPlanner</title>
-  <%= stylesheet_link_tag "//cdn.jsdelivr.net/bootstrap/3.1.1/css/bootstrap.min.css", media: "all" %>
-  <%= stylesheet_link_tag "//cdn.jsdelivr.net/bootstrap/3.1.1/css/bootstrap-theme.min.css", media: "all" %>
-  <%= stylesheet_link_tag "//cdn.jsdelivr.net/jquery.ui/1.10.4/themes/jquery-ui.min.css", media: "all" %>
+  <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.1/jquery.mobile.min.css", media: "all" %>
+  <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.1/jquery.mobile.theme.min.css", media: "all" %>
   <%= stylesheet_link_tag "application", media: "all" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <p id="notice"><%= notice %></p>  
+  <div data-role="page">
+
+    <div data-role="header" style="overflow:hidden;">
+      <h1>G&auml;steverwaltung</h1>
+      <div data-role="navbar">
+        <%= render partial: "navbar" %>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <%= yield %>          
-      </div>
-    </div>  
+
+    <div role="main" class="ui-content">
+      <%= yield %>
+	  </div>
+
   </div>
 
-  <%= javascript_include_tag "//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js" %>
-  <%= javascript_include_tag "//cdn.jsdelivr.net/bootstrap/3.1.1/js/bootstrap.min.js" %>  
-  <%= javascript_include_tag "//cdn.jsdelivr.net/jquery.ui/1.10.4/jquery-ui.min.js" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.1/jquery.mobile.min.js" %>
   <%= javascript_include_tag "application" %>
   
 </body>

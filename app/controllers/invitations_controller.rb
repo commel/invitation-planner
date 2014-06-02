@@ -27,9 +27,10 @@ class InvitationsController < ApplicationController
   def create
     set_event    
     @invitation = Invitation.new(invitation_params)
+    @invitation.event = @event
 
     if @invitation.save
-      redirect_to @event, notice: 'Invitation was successfully created.'
+      redirect_to event_invitations_path(@event), notice: 'Invitation was successfully created.'
     else
       render :new
     end
@@ -39,7 +40,7 @@ class InvitationsController < ApplicationController
   def update
     set_event    
     if @invitation.update(invitation_params)
-      redirect_to @event, notice: 'Invitation was successfully updated.'
+      redirect_to event_invitations_path(@event), notice: 'Invitation was successfully updated.'
     else
       render :edit
     end

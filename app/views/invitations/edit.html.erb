@@ -1,5 +1,10 @@
-<h1>Einladung bearbeiten</h1>
+<h1><%= @event.name %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'zurück', event_invitations_path([@event]), class: "btn btn-default btn-block btn-lg" %>
+<p>
+  Datensatz erstellt: <%= time_ago_in_words(@invitation.created_at) %>
+</p>
+<p>
+  Zuletzt geändert: <%= time_ago_in_words(@invitation.updated_at) %>
+</p>
