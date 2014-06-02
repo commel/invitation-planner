@@ -4,7 +4,6 @@ class InvitationsController < ApplicationController
   # GET /invitations
   def index
     set_event    
-    @invitations = Invitation.all
   end
 
   # GET /invitations/1

@@ -2,4 +2,7 @@
   <li>
     <%= link_to "Neues Event", new_event_path, { "data-icon" => "plus"} %>
   </li>
+  <% if @event %>
+    <li><%= link_to "zurück", events_path, { "data-icon" => "back" } %></li>
+  <% end %>
 </ul>
