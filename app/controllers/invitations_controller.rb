@@ -3,7 +3,8 @@ class InvitationsController < ApplicationController
 
   # GET /invitations
   def index
-    set_event    
+    set_event
+    @guest_count = @event.invitations.pluck(:qty).sum
   end
 
   # GET /invitations/1
@@ -65,6 +66,6 @@ class InvitationsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def invitation_params
-      params.require(:invitation).permit(:name, :guest_state_id)
+      params.require(:invitation).permit(:name, :qty, :guest_state_id)
     end
 end

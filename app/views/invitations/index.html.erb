@@ -5,7 +5,7 @@
     <li>
       <%= link_to edit_event_invitation_path(@event, invitation) do %>
       <h2><%= invitation.name %></h2>
-      <p><%= invitation.guest_state.label %></p>
+      <p><%= invitation.guest_state.label %> (<%= invitation.qty %>)</p>
       <% end %>
     </li>
   <% end %>
