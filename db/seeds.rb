@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+GuestState.create(code: 'undefined', label: 'Unbekannt')
+GuestState.create(code: 'invited', label: 'Eingeladen')
+GuestState.create(code: 'accepted', label: 'Kommt')
+GuestState.create(code: 'declined', label: 'Abgesagt')
+GuestState.create(code: 'payed', label: 'Bezahlt')

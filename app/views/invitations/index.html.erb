@@ -1,9 +1,12 @@
 <h1>Einladungen für <%= @event.name %></h1>
 
-<ul data-role="listview" data-filter="true" data-autodividers="true" data-filter-placeholder="Gastenamen suchen..." data-inset="true">
+<ul data-role="listview" data-filter="true" data-autodividers="true" data-filter-placeholder="Gästenamen suchen..." data-inset="true">
   <% @event.invitations.each do |invitation| %>
     <li>
-      <%= link_to invitation.name, edit_event_invitation_path(@event, invitation) %>
+      <%= link_to edit_event_invitation_path(@event, invitation) do %>
+      <h2><%= invitation.name %></h2>
+      <p><%= invitation.guest_state.label %></p>
+      <% end %>
     </li>
   <% end %>
 </ul>

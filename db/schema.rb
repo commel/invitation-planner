@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140425204652) do
+ActiveRecord::Schema.define(version: 20140624185227) do
 
   create_table "events", force: true do |t|
     t.string   "name"
@@ -20,14 +20,17 @@ ActiveRecord::Schema.define(version: 20140425204652) do
     t.datetime "updated_at"
   end
 
+  create_table "guest_states", force: true do |t|
+    t.string "code"
+    t.string "label"
+  end
+
   create_table "invitations", force: true do |t|
     t.string   "name"
-    t.boolean  "invited"
-    t.boolean  "accepted"
-    t.boolean  "payed"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "event_id"
+    t.integer  "guest_state_id"
   end
 
 end

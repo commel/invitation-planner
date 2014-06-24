@@ -2,15 +2,7 @@
 
   <%= f.label :name %>
   <%= f.text_field :name, placeholder: "Name des Gasts" %>
-
-  <fieldset data-role="controlgroup">
-    <%= f.label :invited, "Eingeladen" %>
-    <%= f.check_box :invited %>
-    <%= f.label :accepted, "Einladung angenommen" %>
-    <%= f.check_box :accepted %>
-    <%= f.label :payed, "Bezahlt" %>
-    <%= f.check_box :payed %>
-  </fieldset>
+  <%= f.select :guest_state_id, options_for_select(GuestState.all.map{|s| [s.label, s.id]}, @invitation.guest_state) %>
 
   <%= f.button "Speichern" %>
 <% end %>
