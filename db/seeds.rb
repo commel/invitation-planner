@@ -8,6 +8,7 @@
 
 GuestState.create(code: 'undefined', label: 'Unbekannt')
 GuestState.create(code: 'invited', label: 'Eingeladen')
+GuestState.create(code: 'undecided', label: 'Unentschieden')
 GuestState.create(code: 'accepted', label: 'Kommt')
 GuestState.create(code: 'declined', label: 'Abgesagt')
 GuestState.create(code: 'payed', label: 'Bezahlt')
