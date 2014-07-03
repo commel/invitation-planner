@@ -6,8 +6,7 @@
   <%= f.select :guest_state_id, options_for_select(GuestState.all.map{|s| [s.label, s.id]}, @invitation.guest_state.present? ? @invitation.guest_state.id : nil) %>
   <%= f.label :qty, "Personen" %>
   <%= f.text_field :qty, :data => { :highlight => true }, min: 0, max: 10, type: "range" %>
-
+  <%= f.label :paying %>
+  <%= f.check_box :paying %>
   <%= f.button "Speichern" %>
 <% end %>
-
-<p></p>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140703084806) do
+ActiveRecord::Schema.define(version: 20140703111048) do
 
   create_table "costs", force: true do |t|
     t.integer  "event_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140703084806) do
     t.integer  "event_id"
     t.integer  "guest_state_id"
     t.integer  "qty",            default: 1
+    t.boolean  "paying",         default: false
   end
 
 end

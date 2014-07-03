@@ -1,0 +1,19 @@
+<h1>Kosten für '<%= @event.name %>'</h1>
+
+<ul data-role="listview" data-inset="true" data-divider-theme="a">
+  <li data-role="list-divider">Kosten</li>
+  <% @event.costs.each_with_index do |cost, index| %>
+    <li data-icon="edit">
+      <%= link_to edit_event_cost_path(@event, cost) do %>
+        <h1><%= cost.description %></h1>
+        <p><%= number_to_currency(cost.amount) %></p>
+      <% end %>
+    </li>
+  <% end %>
+  <li data-role="list-divider">Gesamtbetrag</li>  
+  <li><%= number_to_currency(@event.total_costs) %></li>
+  <li data-role="list-divider">Zahlende Teilnehmer</li>  
+  <li><%= @event.paying_guests %></li>
+  <li data-role="list-divider">Geteilte Kosten pro Teilnehmer</li>
+  <li><strong><%= number_to_currency(@event.shared_costs) %></strong></li>
+</ul>

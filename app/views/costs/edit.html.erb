@@ -1,0 +1,10 @@
+<h1><%= @event.name %></h1>
+
+<%= render 'form' %>
+
+<p>
+  Datensatz erstellt: <%= time_ago_in_words(@cost.created_at) %>
+</p>
+<p>
+  Zuletzt geändert: <%= time_ago_in_words(@cost.updated_at) %>
+</p>
