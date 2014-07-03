@@ -1,0 +1,20 @@
+<h1>Statistik für '<%= @event.name %>'</h1>
+
+<table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+  <thead>
+    <tr>
+      <th data-priority="1">Position</th>
+      <th data-priority="2">Status</th>
+      <th data-priority="3">Anzahl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @event.statistics.each_with_index do |data, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= data[:state] %></td>
+        <td><%= data[:qty] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   
   has_many :invitations, -> { order(name: :asc) }
+  has_many :costs
 
   def statistics
     self.invitations.select("sum(qty) as qty, guest_state_id as guest_state_id")
