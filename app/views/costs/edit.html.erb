@@ -2,6 +2,8 @@
 
 <%= render 'form' %>
 
+<%= link_to "Löschen", event_cost_path(@event, @cost), method: :delete, class: "ui-btn ui-icon-delete ui-btn-icon-left" %>
+
 <p>
   Datensatz erstellt: <%= time_ago_in_words(@cost.created_at) %>
 </p>

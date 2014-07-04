@@ -1,3 +1,4 @@
+#encoding: utf-8
 class CostsController < ApplicationController
   before_action :set_event
   
@@ -31,6 +32,9 @@ class CostsController < ApplicationController
   end
 
   def destroy
+    @cost = @event.costs.find(params[:id])
+    @cost.destroy
+    redirect_to event_costs_path(@event), notice: 'Kosten wurden gelöscht.'
   end
   
   private
