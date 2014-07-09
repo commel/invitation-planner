@@ -1,12 +1,12 @@
 <ul>
-  <li><%= link_to 'Neuer Gast', new_event_invitation_path(@event), { "data-icon" => "plus" } %></li>
+  <li><%= link_to t('.new_guest'), new_event_invitation_path(@event), { "data-icon" => "plus" } %></li>
   <% if @event %>
-    <li><%= link_to "Statistik", event_statistics_path(@event), { "data-icon" => "bullets" } %></li>
-    <li><%= link_to "Kosten", event_costs_path(@event), { "data-icon" => "shop" } %></li>  
+    <li><%= link_to t('.statistics'), event_statistics_path(@event), { "data-icon" => "bullets" } %></li>
+    <li><%= link_to t('.costs'), event_costs_path(@event), { "data-icon" => "shop" } %></li>  
   <% end %>
   <% if @invitation %>
     <li><%= link_to @event.name, event_invitations_path(@event), { "data-icon" => "back" } %></li>
   <% else %>
-    <li><%= link_to 'Events', events_path, { "data-icon" => "back" } %></li>
+    <li><%= link_to t('.events'), events_path, { "data-icon" => "back" } %></li>
   <% end %>
 </ul>

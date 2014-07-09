@@ -1,7 +1,7 @@
 <ul>
-    <li><%= link_to "Neue Kosten erfassen", new_event_cost_path(@event), { "data-icon" => "plus" } %></li>
+    <li><%= link_to t('.new_costs'), new_event_cost_path(@event), { "data-icon" => "plus" } %></li>
     <% if @cost %>
-      <li><%= link_to "Kosten", event_costs_path(@event), { "data-icon" => "back" } %></li>
+      <li><%= link_to t('.costs'), event_costs_path(@event), { "data-icon" => "back" } %></li>
     <% else %>
       <li><%= link_to @event.name, event_invitations_path(@event), { "data-icon" => "back" } %></li>
     <% end %>

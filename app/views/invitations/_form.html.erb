@@ -2,11 +2,11 @@
 
   <%= f.label :name %>
   <%= f.text_field :name, placeholder: "Name des Gasts" %>
-  <%= f.label :guest_state, "Status" %>
+  <%= f.label :guest_state %>
   <%= f.select :guest_state_id, options_for_select(GuestState.all.map{|s| [s.label, s.id]}, @invitation.guest_state.present? ? @invitation.guest_state.id : nil) %>
-  <%= f.label :qty, "Personen" %>
+  <%= f.label :qty %>
   <%= f.text_field :qty, :data => { :highlight => true }, min: 0, max: 10, type: "range" %>
   <%= f.label :paying %>
   <%= f.check_box :paying %>
-  <%= f.button "Speichern" %>
+  <%= f.button %>
 <% end %>

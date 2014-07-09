@@ -1,5 +1,17 @@
 de:
-  hello: "Hallo Welt"
+  costs:
+    navbar:
+      new_costs: "Neue Kosten"
+      costs: "zurück zu Kosten"
+  invitations:
+    navbar:
+      new_guest: "Neuer Gast"
+      statistics: "Statistiken"
+      costs: "Kosten"
+      events: "Events"
+  application:
+    navbar:
+      new_event: "Neues Event"
   number:
     currency:
       format:
@@ -8,9 +20,21 @@ de:
         separator: ','
         precision: 2
         format: '%u%n'  
-  views:
-    labels:
-      costs:
+  helpers:
+    submit:
+      invitation:
+        create: "Speichern"
+        update: "Aktualisieren"
+      cost:
+        create: "Speichern"
+        update: "Aktualisieren"
+    label:
+      invitation:
+        name: "Name"
+        paying: "Zahlt"
+        guest_state: "Status"
+        qty: "Personen"
+      cost:
         description: "Beschreibung"
         amount: "Betrag"
   datetime:

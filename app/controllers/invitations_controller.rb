@@ -24,7 +24,6 @@ class InvitationsController < ApplicationController
   def create
     @invitation = Invitation.new(invitation_params)
     @invitation.event = @event
-    @invitation.update_paying_state
     
     if @invitation.save
       redirect_to event_invitations_path(@event), notice: 'Invitation was successfully created.'
@@ -36,7 +35,6 @@ class InvitationsController < ApplicationController
   # PATCH/PUT /invitations/1
   def update
     @invitation.assign_attributes(invitation_params)
-    @invitation.update_paying_state
     if @invitation.save
       redirect_to event_invitations_path(@event), notice: 'Invitation was successfully updated.'
     else

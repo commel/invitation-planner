@@ -1,8 +1,8 @@
 <ul>
   <li>
-    <%= link_to "Neues Event", new_event_path, { "data-icon" => "plus"} %>
+    <%= link_to t('.new_event'), new_event_path, { "data-icon" => "plus"} %>
   </li>
   <% if @event %>
-    <li><%= link_to "zurück", events_path, { "data-icon" => "back" } %></li>
+    <li><%= link_to t('.back'), events_path, { "data-icon" => "back" } %></li>
   <% end %>
 </ul>
